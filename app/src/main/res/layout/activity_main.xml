@@ -152,7 +152,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/text_gas"
+                        android:id="@+id/text_methan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/image_gas"
@@ -217,14 +217,14 @@
                     android:id="@+id/etTenRau"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:background="@drawable/rounded_corners"
-                    android:padding="7dp"
-                    android:layout_marginTop="10dp"
-                    android:paddingStart="5dp"
                     android:layout_below="@+id/line1"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_corners"
+                    android:ems="10"
                     android:hint="Nhập tên rau"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:padding="7dp"
+                    android:paddingStart="5dp" />
 
                 <EditText
                     android:id="@+id/etNhietDo"
@@ -287,11 +287,11 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="399dp"
-            android:layout_height="42dp"
-            android:text="Cài đặt" />
+<!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            android:layout_width="399dp"-->
+<!--            android:layout_height="42dp"-->
+<!--            android:text="Cài đặt" />-->
 
     </LinearLayout>
 </ScrollView>

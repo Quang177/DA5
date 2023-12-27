@@ -34,13 +34,22 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
+    Button btn, btnAdd;
+    ImageView btnShow;
+    EditText etNhapTenRau, etNhapDoAm, etNhapNhietDo;
+    objectCaiDat obcd;
+    sqlCaiDat sql;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn = findViewById(R.id.button2);
+        sql = new sqlCaiDat(this);
+        btn = findViewById(R.id.button3);
+        btnAdd = findViewById(R.id.button3);
+        btnShow = findViewById(R.id.button4);
+        etNhapTenRau = findViewById(R.id.etTenRau);
+        etNhapDoAm = findViewById(R.id.etDoAm);
+        etNhapNhietDo = findViewById(R.id.etNhietDo);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +57,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ten = etNhapTenRau.getText().toString();
+                String doam = etNhapDoAm.getText().toString();
+                String nhietdo = etNhapNhietDo.getText().toString();
+                int doamint = Integer.valueOf(doam);
+                int nhietdoint = Integer.valueOf(nhietdo);
+                obcd = new objectCaiDat(-1, nhietdoint, doamint, ten);
+                sql.addOne(obcd);
+            }
+        });
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, HienThiCaiDat.class);
+                startActivity(intent1);
+            }
+        });
 
 //        đoạn code test setup_rau
 
